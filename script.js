@@ -71,4 +71,18 @@ function mainFunction() {
     document.write("Average Marks:" + avg + "<br>");
     document.write("Percentage" + per + "%");
 }
-mainFunction();
+ mainFunction();
+
+ document.write("<h1>" + "Question 5" + "</h1>");
+
+ function index( string, char){
+    for(let i = 0;  i < string.length; i++ ){
+        if(string[i] === char){
+            return i;
+        }
+    }
+    return -1;
+ }
+
+let result = index("hello", "o");
+ document.write(result);
