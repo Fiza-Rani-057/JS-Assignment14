@@ -65,53 +65,60 @@ function mainFunction() {
     let subject2 = parseInt(prompt("Enter subject 2 marks"));
     let subject3 = parseInt(prompt("Enter subject 3 marks"));
 
-    let avg = average(subject1 , subject2 , subject3);
-    let per = percentage(subject1 , subject2 , subject3);
+    let avg = average(subject1, subject2, subject3);
+    let per = percentage(subject1, subject2, subject3);
 
     document.write("Average Marks:" + avg + "<br>");
     document.write("Percentage" + per + "%");
 }
- mainFunction();
+mainFunction();
 
-   //  Question 5 
+//  Question 5 
 
- document.write("<h1>" + "Question 5" + "</h1>");
+document.write("<h1>" + "Question 5" + "</h1>");
 
 
- function index( string, char){
-    for(let i = 0;  i < string.length; i++ ){
-        if(string[i] === char){
+function index(string, char) {
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === char) {
             return i;
         }
     }
     return -1;
- }
+}
 
 let result = index("hello", "o");
- document.write(result);
+document.write(result);
 
 //  Question 6 
 
-  document.write("<h1>" + "Question 6" + "</h1>");
+document.write("<h1>" + "Question 6" + "</h1>");
 
-  function vowel( sentence){
-   
-    let word = "";
+function Vowel(sentence) {
+    let count = 0;
     let i = 0;
-    while( i < sentence.length){
-        if(
-            sentence[i] != "a" &&
-            sentence[i] != "e" &&
-            sentence[i] != "i" &&
-            sentence[i] != "o" &&
-            sentence[i] != "u" 
-        ){
-            word += sentence[i];
+    while (i < sentence.length - 1) {
+        switch (sentence[i]) {
+            case "a":
+            case "e":
+            case "i":
+            case "o":
+            case "u":
+                if (sentence[i + 1] == "a" ||
+                    sentence[i + 1] == "e" ||
+                    sentence[i + 1] == "i" ||
+                    sentence[i + 1] == "o" ||
+                    sentence[i + 1] == "u"
+                ){
+                    count++;
+                }
+                break;
         }
-          i++;
+        i++;
     }
-  return word;
+    return count;
+}
+ let resultSentence = "pleases read this application and give me gratuity";
 
-  }
-  let ans = vowel("Hello World");
-  document.write(ans);
+  document.write(resultSentence + "<br>");
+ document.write("Occurrences = " + Vowel(resultSentence));
