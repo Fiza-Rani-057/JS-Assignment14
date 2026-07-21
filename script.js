@@ -31,3 +31,18 @@
   }
  let inputyear = +prompt("Enter any year");
    document.write(leap(inputyear));
+
+//    Question 3 
+
+  document.write("<h1>" + "Question 3" + "</h1>" );
+
+  function calculateS(a , b , c){
+    return  (a + b + c )/ 2;
+  }
+  function area(a , b , c){
+    let s = calculateS(a, b ,c);
+
+    return Math.sqrt(s * (s - a ) * (s - b) * (s - c));
+  }
+  let calculateArea = area( 3 , 7 , 9);
+  document.write(Math.round(calculateArea));
