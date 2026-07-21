@@ -73,7 +73,10 @@ function mainFunction() {
 }
  mainFunction();
 
+   //  Question 5 
+
  document.write("<h1>" + "Question 5" + "</h1>");
+
 
  function index( string, char){
     for(let i = 0;  i < string.length; i++ ){
@@ -86,3 +89,29 @@ function mainFunction() {
 
 let result = index("hello", "o");
  document.write(result);
+
+//  Question 6 
+
+  document.write("<h1>" + "Question 6" + "</h1>");
+
+  function vowel( sentence){
+   
+    let word = "";
+    let i = 0;
+    while( i < sentence.length){
+        if(
+            sentence[i] != "a" &&
+            sentence[i] != "e" &&
+            sentence[i] != "i" &&
+            sentence[i] != "o" &&
+            sentence[i] != "u" 
+        ){
+            word += sentence[i];
+        }
+          i++;
+    }
+  return word;
+
+  }
+  let ans = vowel("Hello World");
+  document.write(ans);
