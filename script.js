@@ -94,9 +94,38 @@ document.write(result);
 
 document.write("<h1>" + "Question 6" + "</h1>");
 
+function vowel(sentence) {
+
+    let word = " ";
+    let i = 0;
+    while (i < sentence) {
+        if (
+            sentence[i] != "a" &&
+            sentence[i] != "e" &&
+            sentence[i] != "i" &&
+            sentence[i] != "o" &&
+            sentence[i] != "u"
+        ) {
+            word = sentence[i];
+        }
+        i++;
+    }
+    return word;
+
+}
+let ans = vowel("Hello World");
+
+
+//    Question 7 
+
+document.write("<h1>" + "Question 7" + "</h1>");
+
+
 function Vowel(sentence) {
+
     let count = 0;
     let i = 0;
+
     while (i < sentence.length - 1) {
         switch (sentence[i]) {
             case "a":
@@ -104,21 +133,88 @@ function Vowel(sentence) {
             case "i":
             case "o":
             case "u":
-                if (sentence[i + 1] == "a" ||
+                if (
+                    sentence[i + 1] == "a" ||
                     sentence[i + 1] == "e" ||
                     sentence[i + 1] == "i" ||
                     sentence[i + 1] == "o" ||
                     sentence[i + 1] == "u"
-                ){
+                ) {
                     count++;
                 }
+
                 break;
         }
         i++;
     }
     return count;
 }
- let resultSentence = "pleases read this application and give me gratuity";
+let resultSentence = "pleases read this application and give me gratuity";
 
-  document.write(resultSentence + "<br>");
- document.write("Occurrences = " + Vowel(resultSentence));
+let resultvowel = Vowel(resultSentence);
+document.write("Sentence: " + resultSentence + "<br>");
+document.write("Occurrences: " + result);
+
+//  Question 8 
+
+document.write("<h1>" + "Question 8" + "</h1>");
+
+function meter(km) {
+    return km * 1000;
+}
+function feet(km) {
+    return km * 3280.84;
+}
+function inch(km) {
+    return km * 39370.1;
+}
+function centimeters(km) {
+    return km * 100000;
+}
+let userInput = parseFloat(prompt("Enter Distance bettween two cities in km"));
+
+document.write("Distance in meters" + meter(userInput) + "<br>");
+document.write("Distance in meters" + feet(userInput) + "<br>");
+document.write("Distance in meters" + inch(userInput) + "<br>");
+document.write("Distance in meters" + centimeters(userInput));
+
+//  Question 9 
+
+document.write("<h1>" + "Question 9" + "</h1>");
+
+function pay(overtime) {
+    if (overtime > 40) {
+        let hours = overtime - 40;
+        let totalhours = hours * 12;
+
+        return totalhours;
+    }
+
+    else {
+        return 0;
+    }
+}
+
+let workingHours = parseInt(prompt("Enter total working hours"));
+let payment = pay(workingHours);
+
+document.write("Overtime pay = Rs: " + payment);
+
+//   Question 10
+
+document.write("<h1>" + "Question 10" + "</h1>");
+
+let amount = parseInt(prompt("Enter amount"));
+
+let hundred = Math.floor(amount / 100);
+amount = amount % 100;
+
+let fifty = Math.floor(amount / 50);
+amount = amount % 50;
+
+let ten = Math.floor(amount / 10);
+
+document.write("100 notes: " + hundred + "<br>");
+document.write("50 notes: " + fifty + "<br>");
+document.write("10 notes: " + ten);
+
